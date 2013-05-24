@@ -89,7 +89,7 @@ class APIobject(object):
             
     def _get_resource_data(self, resource, content_type, params=None):
         resp = self._session.get(resource, content_type, params)
-        return resp.json() # TODO - Error Checking
+        return resp.json # TODO - Error Checking
     
     def _get_linked_resource(self, link, cls_override=None, **kwargs):
         if link is not None:
