@@ -78,6 +78,8 @@ def parse_distance_km(val):
     
 def parse_resource_dict(prop_defs, data):
     prop_dict = dict([(k, None) for k in prop_defs])
+    if callable(data):
+        data = data()
     for k,v in data.items():
         if prop_defs.has_key(k):
             action = prop_defs[k]
